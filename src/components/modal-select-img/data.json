@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "nameFolder": "Thu-muc-root1",
+        "images": [
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            },
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695982206262-45a2d8dfaf56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nameFolder": "Thu-muc-root2",
+        "images": [
+            {
+                "urlImage": "https://plus.unsplash.com/premium_photo-1669986566738-cdfee8fad838?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "nameFolder": "Thu-muc-root3",
+        "images": [
+            {
+                "urlImage": "https://images.unsplash.com/photo-1695905009947-f1ffaa9a727d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1908&q=80"
+            }
+        ]
+    }
+]
