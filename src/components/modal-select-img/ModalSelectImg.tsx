@@ -15,8 +15,14 @@ type data = {
     id: number;
     nameFolder: string;
     images: {
+        nameImage: string
         urlImage: string;
     }[];
+}
+
+type Image = {
+    nameImage: string
+    urlImage: string;
 }
 
 type Props = {
@@ -30,6 +36,9 @@ type MediaContext = {
     setNewFolderName: React.Dispatch<React.SetStateAction<string>>
     data: data[]
     setData: React.Dispatch<React.SetStateAction<data[]>>
+    selectImage: Image,
+    setSelectImage: React.Dispatch<React.SetStateAction<Image>>
+
 }
 
 const MediaContext = createContext<MediaContext>(null!);
@@ -38,13 +47,15 @@ function MediaProvider({ children }: Props) {
     const [mediaUrl, setMediaUrl] = useState<string>("");
     const [newFolderName, setNewFolderName] = useState<string>("")
     const [data, setData] = useState(MediaData);
+    const [selectImage, setSelectImage] = useState<Image>({ nameImage: "", urlImage: "" })
     return <MediaContext.Provider
-        value={{ mediaUrl, setMediaUrl, newFolderName, setNewFolderName, data, setData }}
+        value={{ mediaUrl, setMediaUrl, newFolderName, setNewFolderName, data, setData, selectImage, setSelectImage }}
     >
         {children}
     </MediaContext.Provider>
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useMediaContext() {
     const mediaContext = useContext(MediaContext)
     if (!mediaContext) {

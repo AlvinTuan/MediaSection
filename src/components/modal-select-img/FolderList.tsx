@@ -1,14 +1,17 @@
-import { FolderAddFilled, FolderFilled } from '@ant-design/icons';
+import { FolderFilled } from '@ant-design/icons';
 import { Button, Col, Image, List, Row, Typography } from 'antd';
 import { useEffect, useState } from 'react';
 import ButtonCreateFolder from './ButtonCreateFolder';
 import { useMediaContext } from './ModalSelectImg';
 import MediaData from "./data.json"
 
+
+
 const FolderList = () => {
     const [selectFolder, setSelectFolder] = useState<string | null>(null);
-    const { data, setData } = useMediaContext();
+    const { data, setData, setSelectImage } = useMediaContext();
     const folderNames: string[] = data.map(item => item.nameFolder);
+
 
     // Load dữ liệu từ local storage
     useEffect(() => {
@@ -17,8 +20,6 @@ const FolderList = () => {
             setData(JSON.parse(storedData))
         }
     }, [setData])
-
-
 
     // luu du lieu xuong local storage
     useEffect(() => {
@@ -58,7 +59,10 @@ const FolderList = () => {
                 </Row>
                 <div className='list-image'>
                     {MediaData.find(item => item.nameFolder === selectFolder)?.images.map(image => (
-                        <Image preview={false} height={200} style={{ objectFit: "cover" }} src={image.urlImage} />
+                        <label htmlFor={image.nameImage} key={image.nameImage} onClick={() => setSelectImage(image)}>
+                            <input type="radio" id={image.nameImage} name='image' style={{ "display": "none" }} />
+                            <Image preview={false} height={200} width={"100%"} src={image.urlImage} />
+                        </label>
                     )
                     )}
                 </div>

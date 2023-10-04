@@ -3,7 +3,7 @@ import { Button, Col, Divider, Form, Input, Typography } from 'antd';
 import { useMediaContext } from './ModalSelectImg';
 
 const DetailsInfomation = () => {
-    const mediaContext = useMediaContext();
+    const { selectImage } = useMediaContext();
 
     return (
         <Col className="gutter-row" span={5}>
@@ -14,9 +14,11 @@ const DetailsInfomation = () => {
                 <div className="details__body">
                     <div className="details__image">
                         <div className="images__info">
-                            <img src="https://images.unsplash.com/photo-1675889335685-4ac82f1e47ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="" />
+                            {selectImage.urlImage === "" ? <img src='https://thenounproject.com/api/private/icons/741653/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0' style={{ "height": "130px", "objectFit": "cover" }}></img> :
+                                <img src={selectImage.urlImage} alt="" style={{ "height": "130px", "objectFit": "cover" }} />
+                            }
                             <div className="info">
-                                <p className="info__name">image name</p>
+                                <p className="info__name">{selectImage.nameImage || "Name of Image"}</p>
                                 <p className="info__time">image time</p>
                                 <p className="info__format">image format</p>
                                 <Button danger><DeleteOutlined />Xóa</Button>
