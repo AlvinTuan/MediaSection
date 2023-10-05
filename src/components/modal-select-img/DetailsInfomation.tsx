@@ -1,9 +1,11 @@
 import { DeleteOutlined, InfoOutlined } from '@ant-design/icons';
 import { Button, Col, Divider, Form, Input, Typography } from 'antd';
-import { useMediaContext } from './ModalSelectImg';
+import { useMediaContext } from '../../hooks/useMediaContext';
+import { useState } from 'react';
 
 const DetailsInfomation = () => {
     const { selectImage } = useMediaContext();
+    const [ellipsis] = useState(true);
 
     return (
         <Col className="gutter-row" span={5}>
@@ -18,9 +20,15 @@ const DetailsInfomation = () => {
                                 <img src={selectImage.urlImage} alt="" style={{ "height": "130px", "objectFit": "cover" }} />
                             }
                             <div className="info">
-                                <p className="info__name">{selectImage.nameImage || "Name of Image"}</p>
-                                <p className="info__time">image time</p>
-                                <p className="info__format">image format</p>
+                                <Typography.Text
+                                    style={ellipsis ? { width: 100 } : undefined}
+                                    ellipsis={ellipsis ? { tooltip: `${selectImage.urlImage}` } : false}
+                                >
+                                    {selectImage.urlImage || "Name of Image"}
+                                </Typography.Text>
+                                <p className="info__name"></p>
+                                <p className="info__time">{selectImage.timeUpload || "Time upload"}</p>
+                                <p className="info__format">{selectImage.extension || "Format image"}</p>
                                 <Button danger><DeleteOutlined />Xóa</Button>
                             </div>
                         </div>

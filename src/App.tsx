@@ -1,6 +1,6 @@
 import { Divider } from "antd"
 import ModalMedia from "./components/modal-select-img/ModalMedia"
-import "./index.scss"
+// import ButtonUploadFile from "./components/modal-select-img/ButtonUploadFile"
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         <img src="https://images.unsplash.com/photo-1682686578615-39549501dd08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="" style={{ width: "50%", height: "50%" }} className="image" />
 
       </label >
-
+      {/* <ButtonUploadFile selectFolder="Thu-muc-root1"></ButtonUploadFile> */}
 
     </>
   )

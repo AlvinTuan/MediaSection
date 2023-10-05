@@ -1,12 +1,14 @@
 import { Button, Input, Modal } from "antd";
-import { Dispatch, SetStateAction, useState } from "react";
-import { useMediaContext } from "./ModalSelectImg";
+import { useState } from "react";
+import { useMediaContext } from "../../hooks/useMediaContext";
 
 interface IFolderType {
     id: number
     nameFolder: string
     images: {
         urlImage: string
+        timeUpload: string
+        extension: string
     }[]
 }
 

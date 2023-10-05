@@ -1,14 +1,15 @@
 import { FolderFilled } from '@ant-design/icons';
-import { Button, Col, Image, List, Row, Typography } from 'antd';
+import { Col, Image, List, Row, Typography } from 'antd';
 import { useEffect, useState } from 'react';
 import ButtonCreateFolder from './ButtonCreateFolder';
-import { useMediaContext } from './ModalSelectImg';
+import ButtonUploadFile from './ButtonUploadFile';
 import MediaData from "./data.json"
+import { useMediaContext } from '../../hooks/useMediaContext';
 
 
 
 const FolderList = () => {
-    const [selectFolder, setSelectFolder] = useState<string | null>(null);
+    const [selectFolder, setSelectFolder] = useState<string>("");
     const { data, setData, setSelectImage } = useMediaContext();
     const folderNames: string[] = data.map(item => item.nameFolder);
 
@@ -51,7 +52,7 @@ const FolderList = () => {
                                 <ButtonCreateFolder></ButtonCreateFolder>
                             </Col>
                             <Col span={12}>
-                                <Button style={{ float: "right" }} type="primary">Tải tệp tin</Button>
+                                <ButtonUploadFile selectFolder={selectFolder}></ButtonUploadFile>
                             </Col>
                         </Row>
 
@@ -59,8 +60,8 @@ const FolderList = () => {
                 </Row>
                 <div className='list-image'>
                     {MediaData.find(item => item.nameFolder === selectFolder)?.images.map(image => (
-                        <label htmlFor={image.nameImage} key={image.nameImage} onClick={() => setSelectImage(image)}>
-                            <input type="radio" id={image.nameImage} name='image' style={{ "display": "none" }} />
+                        <label htmlFor={image.urlImage} key={image.urlImage} onClick={() => setSelectImage(image)}>
+                            <input type="radio" id={image.urlImage} name='image' style={{ "display": "none" }} />
                             <Image preview={false} height={200} width={"100%"} src={image.urlImage} />
                         </label>
                     )
