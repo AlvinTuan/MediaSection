@@ -2,6 +2,8 @@ import { Button } from "antd";
 import { useRef } from "react";
 import MediaData from "./data.json"
 import { useMediaContext } from "../../hooks/useMediaContext";
+import { v4 as uuidv4 } from 'uuid';
+
 
 interface props {
     selectFolder: string
@@ -9,7 +11,6 @@ interface props {
 
 const ButtonUploadFile = ({ selectFolder }: props) => {
     const { setData } = useMediaContext()
-    // console.log("🚀 ~ file: ButtonUploadFile.tsx:18 ~ ButtonUploadFile ~ data:", data)
     const selectedFolderIndex = MediaData.findIndex(item => item.nameFolder === selectFolder);
     const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -27,16 +28,19 @@ const ButtonUploadFile = ({ selectFolder }: props) => {
 
             reader.onload = (event) => {
                 if (event.target) {
+                    const id = uuidv4()
                     const dataURL = event.target.result as string;
                     const extension = file.name.split('.').pop() || '';
                     const timeUpload = new Date().toLocaleString(); // Get current time in HH:mm:ss DD/MM/yyyy format
 
-                    const newImage = { urlImage: dataURL, timeUpload, extension };
+                    const newImage = { id, urlImage: dataURL, timeUpload, extension };
                     const updatedMediaData = [...MediaData];
                     if (selectedFolderIndex !== -1) {
                         updatedMediaData[selectedFolderIndex].images.push(newImage);
                     }
                     setData(updatedMediaData);
+                    // Lưu dữ liệu xuống Local Storage
+                    localStorage.setItem('mediaData', JSON.stringify(updatedMediaData));
                 }
             };
 

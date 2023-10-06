@@ -1,23 +1,14 @@
 import { Button, Input, Modal } from "antd";
 import { useState } from "react";
-import { useMediaContext } from "../../hooks/useMediaContext";
-
-interface IFolderType {
-    id: number
-    nameFolder: string
-    images: {
-        urlImage: string
-        timeUpload: string
-        extension: string
-    }[]
-}
+import { Data, useMediaContext } from "../../hooks/useMediaContext";
 
 const ButtonCreateFolder = () => {
     const { data, setData, newFolderName, setNewFolderName } = useMediaContext()
+    console.log("🚀 ~ file: ButtonCreateFolder.tsx:17 ~ ButtonCreateFolder ~ newFolderName:", newFolderName)
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleCreateFolder = () => {
-        const newFolder: IFolderType = {
+        const newFolder: Data = {
             id: data.length + 1,
             nameFolder: newFolderName,
             images: []
@@ -43,7 +34,7 @@ const ButtonCreateFolder = () => {
             <Button type="primary" onClick={showModal} style={{ "float": "right" }}>
                 Tạo thư mục
             </Button>
-            <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title="Tạo thư mục" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                 <Input placeholder="Tên thư mục mới" onChange={(e) => (setNewFolderName(e.target.value))} />
             </Modal>
         </>

@@ -1,5 +1,6 @@
 import { Divider } from "antd"
 import ModalMedia from "./components/modal-select-img/ModalMedia"
+
 // import ButtonUploadFile from "./components/modal-select-img/ButtonUploadFile"
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
 
       </label >
       {/* <ButtonUploadFile selectFolder="Thu-muc-root1"></ButtonUploadFile> */}
-
+      {/* <ModalSection></ModalSection> */}
     </>
   )
 }

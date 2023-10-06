@@ -1,10 +1,11 @@
-import { DeleteOutlined, InfoOutlined } from '@ant-design/icons';
+import { InfoOutlined } from '@ant-design/icons';
 import { Button, Col, Divider, Form, Input, Typography } from 'antd';
 import { useMediaContext } from '../../hooks/useMediaContext';
 import { useState } from 'react';
+import ButtonDeleteFile from './ButtonDeleteFile';
 
 const DetailsInfomation = () => {
-    const { selectImage } = useMediaContext();
+    const { selectImage, selectFolder } = useMediaContext();
     const [ellipsis] = useState(true);
 
     return (
@@ -21,7 +22,7 @@ const DetailsInfomation = () => {
                             }
                             <div className="info">
                                 <Typography.Text
-                                    style={ellipsis ? { width: 100 } : undefined}
+                                    style={ellipsis ? { width: 111 } : undefined}
                                     ellipsis={ellipsis ? { tooltip: `${selectImage.urlImage}` } : false}
                                 >
                                     {selectImage.urlImage || "Name of Image"}
@@ -29,7 +30,7 @@ const DetailsInfomation = () => {
                                 <p className="info__name"></p>
                                 <p className="info__time">{selectImage.timeUpload || "Time upload"}</p>
                                 <p className="info__format">{selectImage.extension || "Format image"}</p>
-                                <Button danger><DeleteOutlined />Xóa</Button>
+                                <ButtonDeleteFile selectFolder={selectFolder}></ButtonDeleteFile>
                             </div>
                         </div>
                     </div>
@@ -42,9 +43,13 @@ const DetailsInfomation = () => {
                             <Input.TextArea></Input.TextArea>
                         </Form.Item>
                         <Form.Item name={"duong-dan"} label="Đường dẫn">
-                            <Typography.Paragraph copyable code>
-                                This is a copyable text.
-                            </Typography.Paragraph>
+                            <Typography.Text
+                                style={ellipsis ? { width: "100%" } : undefined}
+                                ellipsis={ellipsis ? { tooltip: `${selectImage.urlImage}` } : false}
+                                copyable
+                            >
+                                {selectImage.urlImage || "URL of Image"}
+                            </Typography.Text>
                         </Form.Item>
                         <Button type="primary" style={{ "float": "right" }}>
                             Cập nhật

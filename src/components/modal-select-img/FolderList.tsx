@@ -1,6 +1,6 @@
 import { FolderFilled } from '@ant-design/icons';
 import { Col, Image, List, Row, Typography } from 'antd';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import ButtonCreateFolder from './ButtonCreateFolder';
 import ButtonUploadFile from './ButtonUploadFile';
 import MediaData from "./data.json"
@@ -9,8 +9,8 @@ import { useMediaContext } from '../../hooks/useMediaContext';
 
 
 const FolderList = () => {
-    const [selectFolder, setSelectFolder] = useState<string>("");
-    const { data, setData, setSelectImage } = useMediaContext();
+    const { data, setData, setSelectImage, selectFolder, setSelectFolder } = useMediaContext();
+    console.log("🚀 ~ file: FolderList.tsx:13 ~ FolderList ~ data:", data)
     const folderNames: string[] = data.map(item => item.nameFolder);
 
 
