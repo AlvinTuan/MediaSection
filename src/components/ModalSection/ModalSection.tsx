@@ -1,16 +1,18 @@
 import { Button, Divider, Modal, Row } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FolderList from "./FolderList";
 import DetailsInfomation from "./DetailsInfomation";
 import "./styles.scss"
-
 import ImageList from "./ImageList";
 import { MediaProvider } from "../../hooks/useMediaContext";
+import { data } from "./data";
 
 
 const ModalSection = () => {
     const [open, setOpen] = useState(false);
-
+    useEffect(() => {
+        localStorage.setItem('data', JSON.stringify(data))
+    }, [])
     return (
         <>
             <Button type="primary" onClick={() => setOpen(true)}>

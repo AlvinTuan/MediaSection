@@ -1,11 +1,8 @@
-import { ExclamationCircleFilled, InfoOutlined } from '@ant-design/icons';
-import { Button, Col, Divider, Form, Input, Modal, Typography } from 'antd';
-
+import { InfoOutlined } from '@ant-design/icons';
+import { Button, Col, Divider, Form, Input, Typography } from 'antd';
 import { useState } from 'react';
 import { useMediaContext } from '../../hooks/useMediaContext';
-
-
-const { confirm } = Modal;
+import ButtonDeleteImage from './ButtonDeleteImage';
 
 const DetailsInfomation = () => {
     const { data } = useMediaContext()
@@ -14,22 +11,7 @@ const DetailsInfomation = () => {
     const folder = data.find(item => item.nameFolder === selectedFolder)
     const image = folder?.images.find(item => item.id === selectedImageById)
 
-    const showDeleteConfirm = () => {
-        confirm({
-            title: 'Are you sure delete this task?',
-            icon: <ExclamationCircleFilled />,
-            content: 'Some descriptions',
-            okText: 'Yes',
-            okType: 'danger',
-            cancelText: 'No',
-            onOk() {
-                console.log('OK');
-            },
-            onCancel() {
-                console.log('Cancel');
-            },
-        });
-    };
+
     return (
         <Col className="gutter-row details-info" span={5}>
             <h2 className="details__header">
@@ -50,9 +32,7 @@ const DetailsInfomation = () => {
                         </Typography.Text>
                         <p className="info__time">{image?.timeUpload || "Time upload"}</p>
                         <p className="info__format">{image?.extension || "Format image"}</p>
-                        <Button onClick={showDeleteConfirm} type="primary" danger>
-                            Xóa
-                        </Button>
+                        <ButtonDeleteImage></ButtonDeleteImage>
                     </div>
                 </div>
                 <Divider></Divider>
