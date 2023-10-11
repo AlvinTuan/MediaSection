@@ -1,13 +1,27 @@
 import { ExclamationCircleFilled } from "@ant-design/icons";
 import { Button, Modal } from "antd";
 import { useMediaContext } from "../../hooks/useMediaContext";
+import { useEffect } from "react";
 
 
 const { confirm } = Modal;
 
 const ButtonDeleteImage = () => {
-    const { dispatch, selectedFolder, selectedImageById } = useMediaContext()
+    const { data, setData, selectedFolder, selectedImageById } = useMediaContext()
+    const selectedFolderIndex = data.findIndex(folder => folder.nameFolder === selectedFolder);
 
+    useEffect(() => {
+        // Mỗi khi mediaData thay đổi, lưu nó vào local storage
+        localStorage.setItem("mediaData", JSON.stringify(data));
+    }, [data]);
+
+    const handleDeleteFile = (folderIndex: number) => {
+        const updatedMediaData = [...data];
+        if (folderIndex !== -1) {
+            updatedMediaData[folderIndex].images = updatedMediaData[folderIndex].images.filter(image => image.id !== selectedImageById) // Xóa tệp khỏi mảng images
+            setData(updatedMediaData); // Cập nhật dữ liệu trong state
+        }
+    };
     const showDeleteConfirm = () => {
         confirm({
             title: 'Bạn có muốn xóa ảnh đã chọn?',
@@ -16,7 +30,7 @@ const ButtonDeleteImage = () => {
             okType: 'danger',
             cancelText: 'Hủy',
             onOk() {
-                dispatch({ type: "delete-image", folderName: selectedFolder, idImage: selectedImageById })
+                handleDeleteFile(selectedFolderIndex)
             },
             onCancel() {
                 console.log('Cancel');

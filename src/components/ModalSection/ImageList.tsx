@@ -1,6 +1,7 @@
-import { Button, Col, Image, Row } from 'antd';
+import { Col, Image, Row } from 'antd';
 import { useMediaContext } from '../../hooks/useMediaContext';
 import ButtonCreateFolder from './ButtonCreateFolder';
+import ButtonUploadImage from './ButtonUploadImage';
 
 const ImageList = () => {
     const { data } = useMediaContext()
@@ -18,7 +19,7 @@ const ImageList = () => {
                             <ButtonCreateFolder></ButtonCreateFolder>
                         </Col>
                         <Col span={12}>
-                            <Button type='primary' style={{ "float": "right" }}>Upload</Button>
+                            <ButtonUploadImage></ButtonUploadImage>
                         </Col>
                     </Row>
 
