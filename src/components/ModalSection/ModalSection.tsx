@@ -8,8 +8,6 @@ import ImageList from "./ImageList";
 import { MediaProvider } from "../../hooks/useMediaContext";
 
 
-
-
 const ModalSection = () => {
     const [open, setOpen] = useState(false);
 

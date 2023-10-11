@@ -1,8 +1,9 @@
 import { Button, Col, Image, Row } from 'antd';
-import data from "./data.json"
 import { useMediaContext } from '../../hooks/useMediaContext';
+import ButtonCreateFolder from './ButtonCreateFolder';
 
 const ImageList = () => {
+    const { data } = useMediaContext()
     const { selectedFolder, selectedImageById, setSelectedImageById } = useMediaContext()
     console.log("🚀 ~ file: ImageList.tsx:10 ~ ImageList ~ selectedImageById:", selectedImageById)
     return (
@@ -14,7 +15,7 @@ const ImageList = () => {
                 <Col className="gutter-row" span={10}>
                     <Row>
                         <Col span={12}>
-                            <Button type='primary' style={{ "float": "right" }}>Tạo tệp tin</Button>
+                            <ButtonCreateFolder></ButtonCreateFolder>
                         </Col>
                         <Col span={12}>
                             <Button type='primary' style={{ "float": "right" }}>Upload</Button>

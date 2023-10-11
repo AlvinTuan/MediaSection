@@ -1,7 +1,6 @@
 import { ExclamationCircleFilled, InfoOutlined } from '@ant-design/icons';
 import { Button, Col, Divider, Form, Input, Modal, Typography } from 'antd';
 
-import data from "./data.json"
 import { useState } from 'react';
 import { useMediaContext } from '../../hooks/useMediaContext';
 
@@ -9,6 +8,7 @@ import { useMediaContext } from '../../hooks/useMediaContext';
 const { confirm } = Modal;
 
 const DetailsInfomation = () => {
+    const { data } = useMediaContext()
     const [ellipsis] = useState(true);
     const { selectedFolder, selectedImageById } = useMediaContext()
     const folder = data.find(item => item.nameFolder === selectedFolder)

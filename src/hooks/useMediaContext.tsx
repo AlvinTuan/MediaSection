@@ -1,7 +1,6 @@
 import { createContext, useContext, useState } from "react";
-import { defaultFolder } from "../constants/contant.type";
 import { Folder } from "../types/types";
-import MediaData from "../components/ModalSection/data.json"
+import { data as MediaData } from "../components/ModalSection/data";
 
 type props = {
     children: React.ReactNode
@@ -21,8 +20,8 @@ type MediaContext = {
 const MediaContext = createContext<MediaContext>(null!);
 
 export function MediaProvider({ children }: props) {
-    const [selectedFolder, setSelectedFolder] = useState<string>(defaultFolder.nameFolder);
-    const [selectedImageById, setSelectedImageById] = useState<number | undefined>(defaultFolder.images[0].id);
+    const [selectedFolder, setSelectedFolder] = useState<string>(MediaData[0].nameFolder);
+    const [selectedImageById, setSelectedImageById] = useState<number | undefined>(MediaData[0].images[0].id);
     const [data, setData] = useState<Folder[]>(MediaData);
     return <MediaContext.Provider value={{ data, setData, selectedFolder, setSelectedFolder, selectedImageById, setSelectedImageById }}>{children}</MediaContext.Provider>
 }
