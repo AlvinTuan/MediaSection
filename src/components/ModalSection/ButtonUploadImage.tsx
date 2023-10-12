@@ -1,10 +1,9 @@
 import { Button } from "antd";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useMediaContext } from "../../hooks/useMediaContext";
 
 const ButtonUploadFile = () => {
     const { data, setData, selectedFolder } = useMediaContext()
-    console.log("🚀 ~ file: ButtonUploadImage.tsx:7 ~ ButtonUploadFile ~ selectedFolder:", selectedFolder)
     const selectedFolderIndex = data.findIndex(item => item.nameFolder === selectedFolder);
     const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -13,6 +12,10 @@ const ButtonUploadFile = () => {
             fileInputRef.current.click();
         }
     };
+
+    useEffect(() => (
+        localStorage.setItem("data", JSON.stringify(data))
+    ), [data])
 
     const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         const files = e.target.files;
@@ -33,8 +36,6 @@ const ButtonUploadFile = () => {
                         updatedMediaData[selectedFolderIndex].images.push(newImage);
                     }
                     setData(updatedMediaData);
-                    // Lưu dữ liệu xuống Local Storage
-                    localStorage.setItem('mediaData', JSON.stringify(updatedMediaData));
                 }
             };
 

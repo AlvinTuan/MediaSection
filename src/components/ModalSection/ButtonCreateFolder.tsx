@@ -1,5 +1,5 @@
 import { Button, Form, Input, Modal } from 'antd';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMediaContext } from '../../hooks/useMediaContext';
 
 type FieldType = {
@@ -9,8 +9,10 @@ type FieldType = {
 const ButtonCreateFolder = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { data, setData } = useMediaContext()
-    console.log("🚀 ~ file: ButtonCreateFolder.tsx:12 ~ ButtonCreateFolder ~ data:", data)
-    localStorage.setItem("data", JSON.stringify(data))
+
+    useEffect(() => (
+        localStorage.setItem("data", JSON.stringify(data))
+    ), [data])
 
     const handleCreateFolder = ({ namefolder }: FieldType) => {
         const newFolder = {

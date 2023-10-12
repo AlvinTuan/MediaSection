@@ -11,8 +11,7 @@ const ButtonDeleteImage = () => {
     const selectedFolderIndex = data.findIndex(folder => folder.nameFolder === selectedFolder);
 
     useEffect(() => {
-        // Mỗi khi mediaData thay đổi, lưu nó vào local storage
-        localStorage.setItem("mediaData", JSON.stringify(data));
+        localStorage.setItem("data", JSON.stringify(data));
     }, [data]);
 
     const handleDeleteFile = (folderIndex: number) => {

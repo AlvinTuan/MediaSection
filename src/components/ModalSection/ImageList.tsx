@@ -6,7 +6,6 @@ import ButtonUploadImage from './ButtonUploadImage';
 const ImageList = () => {
     const { data } = useMediaContext()
     const { selectedFolder, selectedImageById, setSelectedImageById } = useMediaContext()
-    console.log("🚀 ~ file: ImageList.tsx:10 ~ ImageList ~ selectedImageById:", selectedImageById)
     return (
         <Col className="gutter-row" span={14}>
             <Row gutter={16}>

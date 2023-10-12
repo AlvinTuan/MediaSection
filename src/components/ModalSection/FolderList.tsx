@@ -12,7 +12,6 @@ const FolderList = () => {
     const folderNames: string[] | undefined = data?.map(folder => folder.nameFolder);
     const { selectedFolder, setSelectedFolder, setSelectedImageById } = useMediaContext()
     const firstImage = data?.find(item => item.nameFolder === selectedFolder)?.images[0]
-    console.log("🚀 ~ file: FolderList.tsx:15 ~ FolderList ~ firstImage:", firstImage)
 
 
     const handleSelectFolder = (item: string) => {
